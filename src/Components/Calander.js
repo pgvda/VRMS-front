@@ -28,7 +28,8 @@ export default function CalendarGfg() {
     return hasReservation ? 'reserved-date' : '';
   };
 
-  const onClickDay = date => {
+
+  const onClickDay = (date, event) => {
     const formattedDate = new Date(date);
     const localDate = formattedDate.toLocaleDateString('en-US');
 
@@ -49,7 +50,9 @@ export default function CalendarGfg() {
 
   return (
     <div>
-      <Calendar onChange={onChange} value={value} tileClassName={tileClassName} onClickDay={onClickDay} />
+
+      <Calendar onChange={onChange} value={value} tileClassName={tileClassName} onClickDay={(date, event) => onClickDay(date, event)} />
+
 
       {selectedReservation && (
         <div className="message-box" style={{ top: messageBoxPosition.top, left: messageBoxPosition.left }}>

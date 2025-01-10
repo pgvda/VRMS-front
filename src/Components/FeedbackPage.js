@@ -52,7 +52,9 @@ export default function FeedbackPage() {
                     overallSatisfaction: formData.overallSatisfaction,
                     otherFeedback: formData.otherFeedback,
                     SuggestionsForImprovement: formData.SuggestionsForImprovement
-                }),vehicleNo
+
+                }),vehicle
+
             });
             
             const data = await response.json();
